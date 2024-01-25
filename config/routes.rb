@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root "posts#index"
-  resources :posts do 
-    resources :comments
+  resources :tags do 
+    resources :posts do 
+      resources :comments
+    end
   end
 end

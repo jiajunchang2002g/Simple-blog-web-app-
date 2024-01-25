@@ -1,109 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CategoryList from './components/CategoryList';
+import PostList from './components/PostList';
+import AddPostForm from './components/AddPostForm';
+import AddCommentForm from './components/AddCommentForm';
 
-function App() {
+const App = () => {
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [posts, setPosts] = useState([]);
-  const [newPost, setNewPost] = useState({ title: '', body: '' });
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState({ postId: '', text: '' });
 
-  // Fetch posts on component mount
   useEffect(() => {
-    axios.get('http://localhost:3000/posts')
-      .then(response => {
-        setPosts(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    // Fetch categories
+    axios.get('http://localhost:3000/categories')
+      .then(response => setCategories(response.data))
+      .catch(error => console.error('Error fetching categories:', error));
   }, []);
 
-  // Fetch comments when a post is selected
   useEffect(() => {
-    if (newComment.postId) {
-      axios.get(`http://localhost:3000/posts/${newComment.postId}/comments`)
-        .then(response => {
-          setComments(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-  }, [newComment.postId]);
+    // Fetch posts and comments for the selected category
+    if (selectedCategory) {
+      axios.get(`http://localhost:3000/categories/${selectedCategory.id}/posts`)
+        .then(response => setPosts(response.data))
+        .catch(error => console.error('Error fetching posts:', error));
 
-  const handlePostSubmit = (e) => {
-    e.preventDefault();
-    axios.post('http://localhost:3000/posts', newPost)
-      .then(response => {
-        setPosts([...posts, response.data]);
-        setNewPost({ title: '', body: '' });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+      axios.get(`http://localhost:3000/categories/${selectedCategory.id}/comments`)
+        .then(response => setComments(response.data))
+        .catch(error => console.error('Error fetching comments:', error));
+    }
+  }, [selectedCategory]);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
   };
 
-  const handleCommentSubmit = (e) => {
-    e.preventDefault();
-    axios.post(`http://localhost:3000/posts/${newComment.postId}/comments`, { text: newComment.text })
-      .then(response => {
-        setComments([...comments, response.data]);
-        setNewComment({ postId: '', text: '' });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+  const handleAddPost = (newPost) => {
+    // Add a new post to the selected category
+    axios.post(`http://localhost:3000/categories/${selectedCategory.id}/posts`, newPost)
+      .then(response => setPosts([...posts, response.data]))
+      .catch(error => console.error('Error adding post:', error));
+  };
+
+  const handleAddComment = (newComment) => {
+    // Add a new comment to the selected category
+    axios.post(`http://localhost:3000/categories/${selectedCategory.id}/comments`, newComment)
+      .then(response => setComments([...comments, response.data]))
+      .catch(error => console.error('Error adding comment:', error));
   };
 
   return (
     <div>
-      <h2>Posts</h2>
-      <ul>
-        {posts.map(post => (
-          <li key={post.id}>
-            <strong>{post.title}</strong>: {post.body}
-            <button onClick={() => setNewComment({ postId: post.id, text: '' })}>View Comments</button>
-          </li>
-        ))}
-      </ul>
-
-      <form onSubmit={handlePostSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={newPost.title}
-          onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
-        />
-        <textarea
-          placeholder="Body"
-          value={newPost.body}
-          onChange={(e) => setNewPost({ ...newPost, body: e.target.value })}
-        />
-        <button type="submit">Add Post</button>
-      </form>
-
-      {newComment.postId && (
+      <CategoryList categories={categories} onCategoryClick={handleCategoryClick} />
+      {selectedCategory && (
         <>
-          <h2>Comments</h2>
-          <ul>
-            {comments.map(comment => (
-              <li key={comment.id}>{comment.text}</li>
-            ))}
-          </ul>
-
-          <form onSubmit={handleCommentSubmit}>
-            <textarea
-              placeholder="Comment"
-              value={newComment.text}
-              onChange={(e) => setNewComment({ ...newComment, text: e.target.value })}
-            />
-            <button type="submit">Add Comment</button>
-          </form>
+          <PostList posts={posts} />
+          <AddPostForm onAddPost={handleAddPost} />
+          <AddCommentForm onAddComment={handleAddComment} />
         </>
       )}
     </div>
   );
-}
+};
 
 export default App;
-

@@ -1,13 +1,37 @@
-posts = Post.create([
-  { title: 'Introduction to Ruby on Rails', body: 'Ruby on Rails is a web development framework that makes it easy to build powerful web applications quickly.' },
-  { title: 'Getting Started with ReactJS', body: 'ReactJS is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of developers.' },
-  { title: 'Exploring Machine Learning Algorithms', body: 'Machine learning involves the use of algorithms that can learn patterns and make predictions from data.' },
+# seeds.rb
+
+# Clear existing records
+Tag.destroy_all
+Post.destroy_all
+Comment.destroy_all
+
+# Seed Tags
+tags = Tag.create([
+  { title: 'Vegetable Gardening' },
+  { title: 'Flower Gardens' },
+  { title: 'Landscaping' },
+  { title: 'Herb Gardens' },
+  { title: 'Container Gardening' }
+  # Add more tags as needed
 ])
 
-posts.each do |post|
-  post.comments.create([
-    { commenter: 'Coder123', body: 'Great overview of Ruby on Rails!' },
-    { commenter: 'WebDevMaster', body: 'I love the simplicity and power of ReactJS.' },
-    { commenter: 'DataScienceFan', body: 'Machine learning is such an exciting field. Thanks for the article!' },
+# Seed Posts for each Tag
+tags.each do |tag|
+  posts = tag.posts.create([
+    { title: 'Tips for Healthy Tomatoes', body: 'Learn the best practices for growing vibrant and healthy tomatoes.' },
+    { title: 'Creating a Colorful Flower Bed', body: 'Explore ideas for designing a stunning and colorful flower bed.' }
+    # Add more posts as needed
   ])
+
+  # Seed Comments for each Post
+  posts.each do |post|
+    post.comments.create([
+      { commenter: 'Alice Johnson', body: 'Great post! I will try these tips in my garden.' },
+      { commenter: 'Bob Smith', body: 'Thanks for sharing your expertise.' }
+      # Add more comments as needed
+    ])
+  end
 end
+
+puts 'Seed data has been created successfully.'
+
