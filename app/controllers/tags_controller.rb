@@ -1,12 +1,12 @@
 class TagsController < ApplicationController
   protect_from_forgery with: :null_session
   def index
-    @tags = Tag.all
+    @tags = Tag.includes(posts: :comments).all
     render json: @tags
   end
   
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.includes(posts: :comments).find(params[:id]) 
     render json: @tag
   end
   
