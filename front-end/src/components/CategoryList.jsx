@@ -1,5 +1,3 @@
-// src/components/CategoryList.js
-
 import React from 'react';
 
 const CategoryList = ({ categories, onCategoryClick }) => {

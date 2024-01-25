@@ -1,5 +1,3 @@
-// src/components/AddPostForm.js
-
 import React, { useState } from 'react';
 
 const AddPostForm = ({ onAddPost }) => {
