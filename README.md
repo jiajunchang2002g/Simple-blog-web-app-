@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Incomplete work. API method. 
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 3.3.0 
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation : NIL 
 
-* Database initialization
+* Database initialization : Seeded
 
 * How to run the test suite : run rails server on -p 3000, then run yarn start from the 'front-end' directory
 
-* Services (job queues, cache servers, search engines, etc.) 
 
-* Deployment instructions : NIL
 
-* ...
+
+
