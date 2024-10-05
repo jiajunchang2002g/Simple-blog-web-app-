@@ -1,6 +1,6 @@
 # README
 
-Simple blog web app. 
+Simple blog web app for school winter assignment (NUS CVWO application)  
 
 API method. 
 
