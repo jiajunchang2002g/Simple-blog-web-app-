@@ -2,6 +2,8 @@
 
 Simple blog web app for school winter assignment (NUS CVWO application)  
 
+Basic CRUD operations with minimal aesthetic features. 
+
 API method. 
 
 Things you may want to cover:
