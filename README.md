@@ -1,6 +1,8 @@
 # README
 
-Incomplete work. API method. 
+Simple blog web app. 
+
+API method. 
 
 Things you may want to cover:
 
