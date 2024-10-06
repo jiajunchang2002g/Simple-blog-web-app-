@@ -26,9 +26,10 @@ Before you begin, ensure you have the following installed on your machine:
 1. **Clone the repository:**
 
    git clone https://github.com/jiajunchang2002g/Simple-blog-web-app-
+   
    cd Simple-blog-web-app
 
-2. **Backend Setup (Rails):**
+3. **Backend Setup (Rails):**
 
    - Navigate to the backend directory:
 
@@ -47,7 +48,7 @@ Before you begin, ensure you have the following installed on your machine:
   
      'rails server'
 
-3. **Frontend Setup (React):**
+4. **Frontend Setup (React):**
 
    - Open another terminal and navigate to the frontend directory:
 
