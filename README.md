@@ -31,49 +31,35 @@ Before you begin, ensure you have the following installed on your machine:
 2. **Backend Setup (Rails):**
 
    - Navigate to the backend directory:
-  
-     **Command**:
 
-     cd backend
+     'cd backend'
 
    - Install the required gems:
   
-     **Command**:
-
-     bundle install
+     'bundle install'
 
    - Set up the database:
-  
-     **Command**:
 
-     rails db:create  
-     rails db:migrate
+     'rails db:create'
+     'rails db:migrate'
 
    - Start the Rails server:
   
-     **Command**:
-
-     rails server
+     'rails server'
 
 3. **Frontend Setup (React):**
 
    - Open another terminal and navigate to the frontend directory:
 
-   **Command**:
-
-     cd frontend
+     'cd frontend'
 
    - Install the required packages:
-
-   **Command**:
    
-     npm install
+     'npm install'
 
    - Start the React development server:
 
-   **Command**:
-
-     npm start
+     'npm start'
 
 5. **Access the application:**
 
