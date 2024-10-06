@@ -25,8 +25,8 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. **Clone the repository:**
 
-   git clone https://github.com/yourusername/simple-blog-app.git  
-   cd simple-blog-app
+   git clone https://github.com/jiajunchang2002g/Simple-blog-web-app-
+   cd Simple-blog-web-app
 
 2. **Backend Setup (Rails):**
 
