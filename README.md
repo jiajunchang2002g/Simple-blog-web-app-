@@ -9,7 +9,7 @@ This is a simple blog web application built using Ruby on Rails for the backend 
 - Responsive UI built with React
 - TypeScript for type safety and better development experience
 - RESTful API for communication between frontend and backend
-- [School Winter Assignment] (docs/CVWO.pdf)
+- [School Winter Assignment](docs/CVWO.pdf)
 
 ## Getting Started
 
