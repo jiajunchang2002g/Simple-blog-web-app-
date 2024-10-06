@@ -1,6 +1,6 @@
 # Simple Blog Web App
 
-This is a simple blog web application built using Ruby on Rails for the backend and React with TypeScript for the frontend. This project serves as a school winter assignment and demonstrates the integration of these technologies.
+This is a simple blog web application for my [School Winter Assignment](docs/CVWO_Assignment_2024.pdf) built using Ruby on Rails for the backend and React with TypeScript for the frontend. This project serves as a school winter assignment and demonstrates the integration of these technologies.
 
 ## Features
 
@@ -9,7 +9,6 @@ This is a simple blog web application built using Ruby on Rails for the backend 
 - Responsive UI built with React
 - TypeScript for type safety and better development experience
 - RESTful API for communication between frontend and backend
-- [School Winter Assignment](docs/CVWO_Assignment_2024.pdf)
 
 ## Getting Started
 
