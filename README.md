@@ -25,44 +25,59 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. **Clone the repository:**
 
+   ```bash
    git clone https://github.com/jiajunchang2002g/Simple-blog-web-app-
-   
    cd Simple-blog-web-app
+   ```
 
-3. **Backend Setup (Rails):**
+2. **Backend Setup (Rails):**
 
    - Navigate to the backend directory:
 
-     'cd backend'
+     ```bash
+     cd backend
+     ```
 
    - Install the required gems:
-  
-     'bundle install'
+
+     ```bash
+     bundle install
+     ```
 
    - Set up the database:
 
-     'rails db:create'
-     'rails db:migrate'
+     ```bash
+     rails db:create
+     rails db:migrate
+     ```
 
    - Start the Rails server:
-  
-     'rails server'
 
-4. **Frontend Setup (React):**
+     ```bash
+     rails server
+     ```
+
+3. **Frontend Setup (React):**
 
    - Open another terminal and navigate to the frontend directory:
 
-     'cd frontend'
+     ```bash
+     cd frontend
+     ```
 
    - Install the required packages:
-   
-     'npm install'
+
+     ```bash
+     npm install
+     ```
 
    - Start the React development server:
 
-     'npm start'
+     ```bash
+     npm start
+     ```
 
-5. **Access the application:**
+4. **Access the application:**
 
    Open your web browser and go to `http://localhost:3000` for the React app. The backend will typically run on `http://localhost:3001`.
 
