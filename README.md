@@ -31,19 +31,27 @@ Before you begin, ensure you have the following installed on your machine:
 2. **Backend Setup (Rails):**
 
    - Navigate to the backend directory:
+  
+     **Command**:
 
      cd backend
 
    - Install the required gems:
+  
+     **Command**:
 
      bundle install
 
    - Set up the database:
+  
+     **Command**:
 
      rails db:create  
      rails db:migrate
 
    - Start the Rails server:
+  
+     **Command**:
 
      rails server
 
@@ -51,17 +59,23 @@ Before you begin, ensure you have the following installed on your machine:
 
    - Open another terminal and navigate to the frontend directory:
 
+   **Command**:
+
      cd frontend
 
    - Install the required packages:
 
+   **Command**:
+   
      npm install
 
    - Start the React development server:
 
+   **Command**:
+
      npm start
 
-4. **Access the application:**
+5. **Access the application:**
 
    Open your web browser and go to `http://localhost:3000` for the React app. The backend will typically run on `http://localhost:3001`.
 
