@@ -4,6 +4,8 @@ This is a simple blog web application for my [School Winter Assignment](docs/CVW
 
 ## Features
 
+!docs/Getting-started.png
+
 - User authentication
 - Create, read, update, and delete blog posts
 - Responsive UI built with React
